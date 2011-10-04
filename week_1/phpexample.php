@@ -6,7 +6,9 @@
 </head>
 <body>
 	<?php
-	echo "This is some stuff output by php";
+	$name = "Bob";
+	
+	echo "This is some stuff output by php " + $name;
 	?>
 </body>
 </html>
