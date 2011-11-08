@@ -1,0 +1,16 @@
+START
+
+maxWidth:integer = 200
+image:File
+
+while(hasAnotherFile)
+{
+	get image from disk
+	
+	image.height = (maxWidth/image.width) * image.height
+	image.width = maxWidth
+	
+	save image to disk
+}
+
+END
