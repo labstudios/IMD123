@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Example Function</title>
+	<script type="text/javascript">
+	var names = new Array("Fred", "George", "Wilma", "Paul", "Betty");
+	var names2 = new Array("Bob", "Stan", "Frita");
+	
+	function printNames(names)
+	{
+		if(!(names instanceof Array))
+		{
+			return;
+		}
+		for(i = 0; i < names.length;++i)
+		{
+			document.write(names[i] + "<br />\r\n");
+		}
+	}
+	
+	function calc(numbers, operator)
+	{
+		var answer;
+		if(!(numbers instanceof Array))
+		{
+			return;
+		}
+		if(operator == null)
+		{
+			operator = "+";
+		}
+		answer = numbers[0];
+		for(i = 1; i < numbers.length; ++i)
+		{
+			switch(operator)
+			{
+				case "-":
+					answer -= numbers[i];
+				break;
+				case "*":
+					answer *= numbers[i];
+				break;
+				case "/":
+					answer /= numbers[i];
+				break;
+				case "+":
+				default:
+					answer += numbers[i];
+				break;
+			}
+		}
+		return answer;
+	}
+	
+	</script>
+</head>
+<body>
+	<script type="text/javascript">
+		printNames(names2);
+		printNames(["Paul", "Marci"]);
+		printNames(names);
+		
+		var added = calc([5, 12, 9, 17, 2]);
+		var divided = calc([15, 3, 5], "/");
+		var multed = calc([8, 15, 9, 6, 22], "*");
+		document.write(multed);
+	</script>
+</body>
+</html>
